@@ -10,6 +10,7 @@ begin
     gem.email = "info@twg.ca"
     gem.homepage = "http://github.com/twg/right_aws"
     gem.authors = ["Scott Tadman"]
+    gem.add_development_dependency 'right_http_connection'
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
      "Manifest.txt",
      "README.txt",
      "Rakefile",
+     "VERSION",
      "lib/acf/right_acf_interface.rb",
      "lib/acf/right_acf_origin_access_identities.rb",
      "lib/acf/right_acf_streaming_interface.rb",
@@ -48,6 +49,7 @@ Gem::Specification.new do |s|
      "lib/sqs/right_sqs_gen2.rb",
      "lib/sqs/right_sqs_gen2_interface.rb",
      "lib/sqs/right_sqs_interface.rb",
+     "right_aws.gemspec",
      "test/acf/test_helper.rb",
      "test/acf/test_right_acf.rb",
      "test/awsbase/test_helper.rb",
@@ -104,9 +106,12 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_development_dependency(%q<right_http_connection>, [">= 0"])
     else
+      s.add_dependency(%q<right_http_connection>, [">= 0"])
     end
   else
+    s.add_dependency(%q<right_http_connection>, [">= 0"])
   end
 end
 
