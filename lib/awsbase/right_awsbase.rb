@@ -249,7 +249,7 @@ module RightAws
       @params[:connection_lifetime] ||= 20*60
       @params[:api_version]  ||= service_info[:default_api_version]
       @logger = @params[:logger]
-      @logger = RAILS_DEFAULT_LOGGER if !@logger && defined?(RAILS_DEFAULT_LOGGER)
+      @logger = Rails.logger if !@logger && Rails.respond_to?(:logger)
       @logger = Logger.new(STDOUT)   if !@logger
       @logger.info "New #{self.class.name} using #{@params[:connections]} connections mode"
       @error_handler = nil
